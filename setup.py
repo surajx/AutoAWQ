@@ -2,7 +2,7 @@ import os
 import torch
 import platform
 import requests
-import importlib
+from importlib.metadata import version
 from pathlib import Path
 from setuptools import setup, find_packages
 
@@ -93,9 +93,9 @@ requirements = [
 ]
 
 try:
-    importlib.metadata.version("autoawq-kernels")
+    version("autoawq-kernels")
     KERNELS_INSTALLED = True
-except importlib.metadata.PackageNotFoundError:
+except Exception:
     KERNELS_INSTALLED = False
 
 # kernels can be downloaded from pypi for cuda+121 only
