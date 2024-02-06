@@ -2,7 +2,7 @@ import os
 import torch
 import platform
 import requests
-import importlib.util
+import importlib
 from pathlib import Path
 from setuptools import setup, find_packages
 
